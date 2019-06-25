@@ -24,8 +24,7 @@ Vagrant.configure('2') do|config |
         s.vm.provision "shell", inline: "cd /home/ubuntu/docker; ls; docker-compose up"
         s.vm.provider :openstack do |os, override|
             os.server_name = "AT09#{ENV['OS_INITIALS']}01"
-            os.flavor = 'student.2.2R'	
-            #override.vm.synced_folder '.', '/vagrant', disabled:true
+            os.flavor = 'student.2.2R'
         end
     end
 end	
